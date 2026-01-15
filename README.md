@@ -36,13 +36,39 @@
 
 ## 快速开始
 
-### 1. 安装依赖
+### 方式一：一键部署脚本（推荐）
+
+**Windows**：
+```bash
+curl -O https://raw.githubusercontent.com/liuw1535/antigravity2api-nodejs/main/setup.bat && setup.bat
+```
+
+**Linux/macOS**：
+```bash
+wget https://raw.githubusercontent.com/liuw1535/antigravity2api-nodejs/main/setup.sh && chmod +x setup.sh && ./setup.sh
+```
+
+或使用 curl：
+```bash
+curl -O https://raw.githubusercontent.com/liuw1535/antigravity2api-nodejs/main/setup.sh && chmod +x setup.sh && ./setup.sh
+```
+
+脚本会自动完成以下操作：
+1. 克隆项目仓库
+2. 安装依赖
+3. 复制配置文件
+4. 配置管理员凭据（交互式输入）
+5. 启动服务
+
+### 方式二：手动部署
+
+#### 1. 安装依赖
 
 ```bash
 npm install
 ```
 
-### 2. 配置环境变量
+#### 2. 配置环境变量
 
 首次启动时，如果 `.env` 和 `config.json` 不存在，系统会自动创建默认配置文件。
 
@@ -68,7 +94,7 @@ JWT_SECRET=your-jwt-secret-key-change-this-in-production
 # IMAGE_BASE_URL=http://your-domain.com
 ```
 
-### 3. 登录获取 Token
+#### 3. 登录获取 Token
 
 ```bash
 npm run login
@@ -76,7 +102,7 @@ npm run login
 
 浏览器会自动打开 Google 授权页面，授权后 Token 会保存到 `data/accounts.json`。
 
-### 4. 启动服务
+#### 4. 启动服务
 
 ```bash
 npm start
